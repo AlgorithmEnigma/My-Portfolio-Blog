@@ -1,10 +1,13 @@
 import { defineMDSveXConfig as defineConfig } from 'mdsvex';
-// import { join } from 'path';
 
 const config = defineConfig({
 	extensions: ['.svelte.md', '.md', '.svx'],
 
-	smartypants: true,
+	smartypants: {
+		dashes: 'oldschool'
+	},
+	layout: '$lib/components/BlogLayout.svelte',
+
 	remarkPlugins: [],
 	rehypePlugins: []
 });
