@@ -37,5 +37,7 @@
 		"vite": "^3.0.0"
 	},
 	"type": "module",
-	"dependencies": {}
+	"dependencies": {
+		"@sanity/client": "^3.3.3"
+	}
 }
