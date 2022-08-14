@@ -1,17 +1,17 @@
 import client from '$lib/utils/sanityClient';
-// import posts from '$lib/stores/posts';
 
 export async function GET() {
-	const data = await client.fetch('*[_type == "post"]');
+	const posts = await client.fetch('*[_type == "post"]');
+	const projects = await client.fetch('*[_type == "project"]');
 	// console.log(data);
 
-	if (data) {
+	if (posts && projects) {
 		return {
 			status: 200,
 			headers: {
 				'access-control-allow-origin': '*'
 			},
-			body: { posts: data }
+			body: { posts, projects }
 		};
 	}
 	return {
